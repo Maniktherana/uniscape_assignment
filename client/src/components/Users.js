@@ -25,7 +25,11 @@ const Users = () => {
     return (
         <>
             {users && users.map((item) => {
-                return (<p key={item._id}>{item.name}, {item.email}, {item.phone}, {item.active ? "Active" : "Not Active"}</p>)
+                return (
+                    <p key={item._id}>
+                        {item.name}, {item.email}, {item.phone}, {item.active ? "Active" : "Not Active"}
+                    </p>
+                )
             })}
         </>
     )

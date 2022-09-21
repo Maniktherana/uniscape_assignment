@@ -42,57 +42,65 @@ function App() {
     }
 
     return (
-      <>
-        <div className="App">
-          <form onSubmit={onSubmit}>
-            <label>
-              Name:
+      <div className={"flex flex-col items-center"}>
+        <div className={"flex flex-col items-center"}>
+          <form onSubmit={onSubmit} className="flex flex-col p-5 w-[450px]">
+              <div className={"p-2 flex flex-row justify-between"}>
+                  <label className={"m-2 font-semibold"}>Name:</label>
+                  <input
+                      name={"name"}
+                      type={"text"}
+                      value={form.name}
+                      onChange={(e) => updateForm({ name: e.target.value })}
+                      className={"w-[300px] border-2 border-gray-200 bg-gray-50 rounded-md shadow-sm p-1 m-1 hover:bg-gray-200"}
+                  />
+              </div>
+              <div className={"p-2 flex flex-row justify-between"}>
+                  <label className={"m-2 font-semibold"}>Email:</label>
+                  <input
+                      name={"email"}
+                      type={"text"}
+                      value={form.email}
+                      onChange={(e) => updateForm({ email: e.target.value })}
+                      className={"w-[300px] border-2 border-gray-200 bg-gray-50 rounded-md shadow-sm p-1 m-1 hover:bg-gray-200"}
+                  />
+              </div>
+              <div className={"p-2 flex flex-row justify-between"}>
+                  <label className={"m-2 font-semibold"}>Phone:</label>
+                  <input
+                      name={"phone"}
+                      type={"text"}
+                      value={form.phone}
+                      onChange={(e) => updateForm({ phone: e.target.value })}
+                      className={"w-[300px] border-2 border-gray-200 bg-gray-50 rounded-md shadow-sm p-1 m-1 hover:bg-gray-200"}
+
+
+                  />
+              </div>
+              <div className={"p-2 flex flex-row justify-center"}>
+                  <label className={"m-2 font-semibold"}>Active?</label>
+                  <input
+                      name={"active"}
+                      type={"checkbox"}
+                      onChange={(e) => {
+                          if(form.active) {
+                              updateForm({active: false})
+                          }
+                          updateForm({active: true})
+                      }}
+                      className={"border-2 border-gray-200 bg-gray-50 rounded-full p-1 m-1 hover:bg-gray-200"}
+                  />
+
+              </div>
               <input
-                  name={"name"}
-                  type={"text"}
-                  value={form.name}
-                  onChange={(e) => updateForm({ name: e.target.value })}
+                  name="submit"
+                  type={"submit"}
+                  className={"w-[300px] self-center m-3 text-white font-bold bg-blue-500 rounded-full p-1 m-1 hover:bg-blue-300"}
               />
-            </label>
-            <label>
-              email:
-              <input
-                  name={"email"}
-                  type={"text"}
-                  value={form.email}
-                  onChange={(e) => updateForm({ email: e.target.value })}
-              />
-            </label>
-            <label>
-              Phone:
-              <input
-                  name={"phone"}
-                  type={"text"}
-                  value={form.phone}
-                  onChange={(e) => updateForm({ phone: e.target.value })}
-              />
-            </label>
-            <label>
-              Active?
-              <input
-                  name={"active"}
-                  type={"checkbox"}
-                  onChange={(e) => {
-                    if(form.active) {
-                      updateForm({active: false})
-                    }
-                    updateForm({active: true})
-                  }}
-              />
-            </label>
-            <input
-                name="submit"
-                type={"submit"}
-            />
           </form>
         </div>
         <Users />
-      </>
+      </div>
   );
 }
 
