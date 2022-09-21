@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 const Users = () => {
     const [users, setUsers] = useState([]);
-
-    // This method fetches the records from the database.
+    
     useEffect(() => {
         async function getUsers() {
             const response = await fetch(`http://localhost:8080/user/`);

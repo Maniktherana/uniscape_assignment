@@ -16,7 +16,6 @@ function App() {
     async function onSubmit(e) {
         e.preventDefault();
 
-        // When a post request is sent to the create url, we'll add a new record to the database.
         const newPerson = { ...form };
 
         await fetch("http://localhost:8080/user/add", {
@@ -34,7 +33,6 @@ function App() {
         setForm({ name: "", email: "", phone: "", active: false });
     }
 
-    // Update state properties
     function updateForm(value) {
       return setForm((prev) => {
         return { ...prev, ...value };
