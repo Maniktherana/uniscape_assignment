@@ -41,7 +41,7 @@ function App() {
     return (
       <div className={"flex flex-col items-center"}>
         <div className={"flex flex-col items-center"}>
-          <form onSubmit={onSubmit} className="flex flex-col p-5 w-[450px]">
+          <form onSubmit={onSubmit} className="flex flex-col p-5 w-[455px]">
               <div className={"p-2 flex flex-row justify-between"}>
                   <label className={"m-2 font-semibold"}>Name:</label>
                   <input
