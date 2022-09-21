@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Users from "./components/Users";
 
@@ -27,7 +27,6 @@ function App() {
         })
             .catch(error => {
                 window.alert(error);
-                return;
             });
 
         setForm({ name: "", email: "", phone: "", active: false });

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const Users = () => {
     const [users, setUsers] = useState([]);
-    
+
     useEffect(() => {
         async function getUsers() {
             const response = await fetch(`http://localhost:8080/user/`);
