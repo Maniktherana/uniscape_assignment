@@ -23,11 +23,13 @@ ATLAS_URI=mongodb+srv://<USERID>:<PASSWORD>@cluster0.ssyl5vn.mongodb.net/?retryW
 run server
 ```bash
 cd server
+npm install
 npm start
 ```
 
 run the frontend
 ```bash
 cd client
+npm install
 npm start
 ```
